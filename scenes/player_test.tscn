@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://br1lxau6bmujw"]
+[gd_scene load_steps=9 format=4 uid="uid://br1lxau6bmujw"]
 
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="1_vyito"]
 [ext_resource type="Texture2D" uid="uid://537lg066b3ii" path="res://assets/concrete.png" id="2_jy6av"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1f7xm"]
+[ext_resource type="Texture2D" uid="uid://cetv2fvcf3hsf" path="res://assets/sky.png" id="3_5qy5b"]
+[ext_resource type="Texture2D" uid="uid://ya10o54fnuim" path="res://assets/Far Trees.png" id="4_q7o6n"]
+[ext_resource type="Texture2D" uid="uid://dkt6quuk0yixa" path="res://assets/Close Trees.png" id="5_4f7ti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3poqt"]
 texture = ExtResource("2_jy6av")
@@ -20,19 +21,43 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_3poqt")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1f7xm"]
+
 [node name="PlayerTest" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(11, 16)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(11, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture = ExtResource("3_5qy5b")
+
+[node name="Far Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(11, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Far Trees"]
+texture = ExtResource("4_q7o6n")
+
+[node name="Close Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(11, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Close Trees"]
+texture = ExtResource("5_4f7ti")
+
+[node name="Player" parent="." instance=ExtResource("1_vyito")]
+position = Vector2(-108, 224)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAIAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAABAP7/AQAAAAAAAAABAP3/AQAAAAAAAAABAPz/AQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAACAAAAAQAAAAAAAAACAP//AQAAAAAAAAACAP7/AQAAAAAAAAACAP3/AQAAAAAAAAACAPz/AQAAAAAAAAD+//z/AQAAAAAAAAD9//z/AQAAAAAAAAD9//v/AQAAAAAAAAD+//v/AQAAAAAAAAD6//z/AQAAAAAAAAD5//z/AQAAAAAAAAD5//v/AQAAAAAAAAD6//v/AQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAABAAUAAQAAAAAAAAABAAYAAQAAAAAAAAABAAcAAQAAAAAAAAACAAcAAQAAAAAAAAACAAYAAQAAAAAAAAACAAUAAQAAAAAAAAACAAQAAQAAAAAAAAACAAMAAQAAAAAAAAABAPv/AQAAAAAAAAABAPr/AQAAAAAAAAABAPn/AQAAAAAAAAABAPj/AQAAAAAAAAABAPf/AQAAAAAAAAACAPf/AQAAAAAAAAACAPj/AQAAAAAAAAACAPn/AQAAAAAAAAACAPr/AQAAAAAAAAACAPv/AQAAAAAAAAABAPb/AQAAAAAAAAABAPX/AQAAAAAAAAABAPT/AQAAAAAAAAABAPP/AQAAAAAAAAABAPL/AQAAAAAAAAABAPH/AQAAAAAAAAABAPD/AQAAAAAAAAACAPb/AQAAAAAAAAACAPX/AQAAAAAAAAACAPT/AQAAAAAAAAACAPP/AQAAAAAAAAACAPL/AQAAAAAAAAACAPH/AQAAAAAAAAACAPD/AQAAAAAAAAACAO//AQAAAAAAAAABAO7/AQAAAAAAAAABAO3/AQAAAAAAAAABAOz/AQAAAAAAAAABAOv/AQAAAAAAAAABAOr/AQAAAAAAAAABAOn/AQAAAAAAAAABAO//AQAAAAAAAAACAOz/AQAAAAAAAAACAOv/AQAAAAAAAAACAOr/AQAAAAAAAAACAOn/AQAAAAAAAAACAOj/AQAAAAAAAAACAO7/AQAAAAAAAAACAO3/AQAAAAAAAAABAOj/AQAAAAAAAAABAOf/AQAAAAAAAAACAOf/AQAAAAAAAAACAOb/AQAAAAAAAAACAOX/AQAAAAAAAAABAOX/AQAAAAAAAAABAOb/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_dwy42")
 
 [node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 160)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(0, 96)
 shape = SubResource("WorldBoundaryShape2D_1f7xm")
-
-[node name="Player" parent="." instance=ExtResource("1_vyito")]
-position = Vector2(-96, 64)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAABAAIAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAABAP7/AQAAAAAAAAABAP3/AQAAAAAAAAABAPz/AQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAACAAAAAQAAAAAAAAACAP//AQAAAAAAAAACAP7/AQAAAAAAAAACAP3/AQAAAAAAAAACAPz/AQAAAAAAAAA=")
-tile_set = SubResource("TileSet_dwy42")
