@@ -36,6 +36,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
+FMod="*res://scenes/controllers/f_mod.tscn"
 
 [display]
 

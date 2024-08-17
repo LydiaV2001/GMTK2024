@@ -26,12 +26,17 @@ script = ExtResource("2_yboh1")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground"]
 texture_repeat = 2
-motion_mirroring = Vector2(32, 32)
+motion_mirroring = Vector2(64, 64)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/ParallaxLayer"]
 texture_filter = 2
 texture_repeat = 2
-position = Vector2(416, 240)
+position = Vector2(427, 240)
 texture = ExtResource("3_efgg3")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/MUSIC/MUSIC_Stage-A"
+event_guid = "{90c82652-d285-4eda-9f9b-4832cf971dc3}"
+autoplay = true
 
 [connection signal="on_fade_out" from="FadeController" to="." method="_on_fade_controller_on_fade_out"]
