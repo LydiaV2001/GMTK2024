@@ -30,20 +30,21 @@ offset = Vector2(0, 80)
 transform = Transform2D(1, 0, 0, 1, 0, 80)
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0, 0)
+motion_scale = Vector2(1, 0)
+motion_offset = Vector2(0, 160)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
 texture = ExtResource("3_5qy5b")
 
 [node name="Far Trees" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.5)
+motion_scale = Vector2(1, 0.5)
 motion_mirroring = Vector2(0, 960)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Far Trees"]
 texture = ExtResource("4_q7o6n")
 
 [node name="Far Trees2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.5)
+motion_scale = Vector2(1, 0.5)
 motion_offset = Vector2(0, 480)
 motion_mirroring = Vector2(0, 960)
 
@@ -51,14 +52,14 @@ motion_mirroring = Vector2(0, 960)
 texture = ExtResource("4_q7o6n")
 
 [node name="Close Trees" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(2, 2)
+motion_scale = Vector2(1, 2)
 motion_mirroring = Vector2(0, 960)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Close Trees"]
 texture = ExtResource("5_4f7ti")
 
 [node name="Close Trees2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(2, 2)
+motion_scale = Vector2(1, 2)
 motion_offset = Vector2(0, 480)
 motion_mirroring = Vector2(0, 960)
 
