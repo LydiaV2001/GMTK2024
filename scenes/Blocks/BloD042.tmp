@@ -13,6 +13,7 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
@@ -25,21 +26,18 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_a44d6"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_66uoh")
 
 [node name="RigidBody2D" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 3
-safe_margin = 0.001
 script = ExtResource("2_sikfe")
-
-[node name="Timer" type="Timer" parent="."]
+gravity_direction = null
 
 [node name="Block" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0, 255, 255, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 254, 255, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_a44d6")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(13, 0, -32, 0, -32, -32, 0, -32, 0, -64, 32, -64, 32, -32, 64, -32, 64, 0)
+[node name="Timer" type="Timer" parent="Block"]
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Block/Timer" to="Block" method="_on_timer_timeout"]
