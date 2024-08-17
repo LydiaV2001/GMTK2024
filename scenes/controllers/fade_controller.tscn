@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://drd0ih15vv0dj"]
+
+[ext_resource type="Script" path="res://scripts/title_scripts/fade_controller.gd" id="1_drwby"]
+
+[node name="FadeController" type="ColorRect"]
+z_index = 1
+offset_right = 872.0
+offset_bottom = 504.0
+color = Color(0, 0, 0, 0)
+script = ExtResource("1_drwby")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

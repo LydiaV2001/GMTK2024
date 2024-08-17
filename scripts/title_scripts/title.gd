@@ -8,7 +8,7 @@ var fader
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	fader = $ColorRect #$ColorRect;
+	fader = $FadeController #$ColorRect;
 	var button = $CanvasGroup/Button
 	button.pressed.connect(self._button_pressed)
 	pass # Replace with function body.
@@ -17,8 +17,7 @@ func _ready() -> void:
 func _button_pressed() -> void:
 	fader.start_fade_out();
 
-
-func _on_color_rect_on_fade_out() -> void:
+func _on_fade_controller_on_fade_out() -> void:
 	var scene = main_scene.instantiate();
 	add_child(scene);
 	queue_free()
