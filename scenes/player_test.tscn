@@ -1,8 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7qesajyny4ta"]
+[gd_scene load_steps=6 format=4 uid="uid://p7766hlbk0sj"]
 
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="1_vyito"]
+[ext_resource type="Texture2D" uid="uid://537lg066b3ii" path="res://assets/concrete.png" id="2_jy6av"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1f7xm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3poqt"]
+texture = ExtResource("2_jy6av")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dwy42"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 3
+sources/1 = SubResource("TileSetAtlasSource_3poqt")
 
 [node name="PlayerTest" type="Node2D"]
 
@@ -11,7 +26,12 @@
 [node name="Floor" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(0, 96)
 shape = SubResource("WorldBoundaryShape2D_1f7xm")
 
 [node name="Player" parent="." instance=ExtResource("1_vyito")]
-position = Vector2(-88, -24)
+position = Vector2(-96, 64)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAIAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAABAP7/AQAAAAAAAAABAP3/AQAAAAAAAAABAPz/AQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAACAAAAAQAAAAAAAAACAP//AQAAAAAAAAACAP7/AQAAAAAAAAACAP3/AQAAAAAAAAACAPz/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_dwy42")

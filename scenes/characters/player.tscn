@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c35rt6rx2e0gk"]
+[gd_scene load_steps=6 format=3 uid="uid://c35rt6rx2e0gk"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jhck7"]
-[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="1_tg8wc"]
+[ext_resource type="Texture2D" uid="uid://ut2tmnu50uim" path="res://assets/chamaleon.png" id="2_8wg15"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_56k4i"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfhxy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_tg8wc")
+"texture": ExtResource("2_8wg15")
 }],
 "loop": true,
 "name": &"default",
@@ -17,12 +17,21 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2s2c2"]
 radius = 16.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu4qx"]
+size = Vector2(32, 32)
+
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
+position = Vector2(-1, 0)
 script = ExtResource("1_jhck7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_56k4i")
+sprite_frames = SubResource("SpriteFrames_kfhxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2s2c2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_eu4qx")
