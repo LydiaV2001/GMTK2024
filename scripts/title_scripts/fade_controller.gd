@@ -3,7 +3,11 @@ extends ColorRect
 
 var timer
 
+var fade_in = false;
+var fade_out = false;
 
+signal on_fade_out;
+signal on_fade_in;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,20 +17,31 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#color = Color(1, 1, 1, 1 * (timer.wait_time - timer.time_left))
+	if fade_in:
+		color = Color(0, 0, 0, 1 * timer.time_left)
+	elif fade_out:
+		color = Color(0, 0, 0, 1 * (timer.wait_time - timer.time_left))
 	
+
+func start_fade_in() -> void:
+	fade_in = true;
+	timer.start(1);
+	pass
+	
+func start_fade_out() -> void:
+	fade_out = true;
+	timer.start();
 	pass
 
-func _start_fade_out() -> void:
-	
-	while(color.a < 1):
-		color = Color(1, 1, 1, 1 * (timer.wait_time - timer.time_left))
-		pass
-	# new instance of timer
-	#var fade_time = Timer.new()
-	#self.add_child(fade_time)
-	
 # this starts the fading
 func _on_timer_timeout() -> void:
-	_start_fade_out()
-	print("timeout!!!")
+	if fade_in:
+		on_fade_in.emit();
+	elif fade_out:
+		on_fade_out.emit();
+		
+	
+	# reset variables
+	fade_in = false;
+	fade_out = false;
+	
