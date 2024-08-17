@@ -30,7 +30,7 @@ DSP/dsp_buffer_count=4
 
 config/name="GMTK2024"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [autoload]
 
