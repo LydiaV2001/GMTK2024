@@ -39,8 +39,8 @@ FmodManager="*res://addons/fmod/FmodManager.gd"
 
 [display]
 
-window/size/viewport_width=568
-window/size/viewport_height=320
+window/size/viewport_width=854
+window/size/viewport_height=480
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
