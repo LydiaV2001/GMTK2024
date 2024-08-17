@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://drtlhodren51d"]
+[gd_scene load_steps=6 format=4 uid="uid://br1lxau6bmujw"]
 
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="1_vyito"]
 [ext_resource type="Texture2D" uid="uid://537lg066b3ii" path="res://assets/concrete.png" id="2_jy6av"]
@@ -9,6 +9,7 @@
 texture = ExtResource("2_jy6av")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
@@ -16,7 +17,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_dwy42"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_3poqt")
 
 [node name="PlayerTest" type="Node2D"]
