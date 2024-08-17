@@ -40,10 +40,6 @@ FmodManager="*res://addons/fmod/FmodManager.gd"
 
 project/assembly_name="GMTK2024"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
-
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
