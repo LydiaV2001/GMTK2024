@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://domnh3fnx7k5p"]
+
+[node name="Fmod" type="FmodBankLoader"]

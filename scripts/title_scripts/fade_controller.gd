@@ -1,5 +1,5 @@
 extends ColorRect
-
+class_name FadeController
 
 var timer
 
