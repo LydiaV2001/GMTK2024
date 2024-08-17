@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://q358hcy020g5"]
+
+[ext_resource type="Script" path="res://scripts/title.gd" id="1_ooxgh"]
+[ext_resource type="Script" path="res://scripts/title_background.gd" id="2_yboh1"]
+[ext_resource type="Texture2D" uid="uid://dwaog8eid11ke" path="res://assets/title_placeholders/titled.png" id="3_efgg3"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_ooxgh")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+texture_repeat = 2
+position = Vector2(192, 160)
+
+[node name="Button" type="Button" parent="CanvasGroup"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Start Game"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasGroup"]
+script = ExtResource("2_yboh1")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground"]
+texture_repeat = 2
+motion_mirroring = Vector2(32, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/ParallaxLayer"]
+texture_filter = 2
+texture_repeat = 2
+position = Vector2(228, 120)
+texture = ExtResource("3_efgg3")
