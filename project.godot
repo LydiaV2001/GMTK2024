@@ -29,12 +29,20 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="GMTK2024"
+run/main_scene="res://scenes/titlescreen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
+
+[display]
+
+window/size/viewport_width=456
+window/size/viewport_height=240
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
