@@ -1,1 +1,14 @@
+# the video game 
+
 This uses the latest version of Godot (Godot 4.3)
+
+## Prerequesites 
+
+Due to the way the FMod plugin works, the addons folder is automatically ignored. 
+
+You'll need to install the fmod plugin found here (https://github.com/utopia-rise/fmod-gdextension). 
+Specifically the latest version as of writing (4.3.0-4.2.2).
+
+- Create a folder called "addons" in the root of the Godot project
+- drag the contents of the release into the "addons" folder
+- if Godot is open, it will prompt you to restart the editor; you should do this.
