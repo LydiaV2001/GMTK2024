@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dew0drxn2m2mu"]
+
+[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="2_oev2p"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fw2d7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-81.5, 224)
+shape = SubResource("WorldBoundaryShape2D_fw2d7")
+
+[node name="BlockSpawner" parent="." instance=ExtResource("2_oev2p")]
+position = Vector2(0, -238)
