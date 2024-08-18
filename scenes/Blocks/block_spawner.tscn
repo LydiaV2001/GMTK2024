@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwbp8smtte4wc"]
+[gd_scene load_steps=3 format=3 uid="uid://dwbp8smtte4wc"]
 
 [ext_resource type="Script" path="res://scripts/block_spawner.gd" id="1_j0ufy"]
+[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="2_rqyw8"]
 
 [node name="BlockSpawner" type="Node2D"]
 script = ExtResource("1_j0ufy")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rqyw8")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
