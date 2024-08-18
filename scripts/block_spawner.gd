@@ -1,6 +1,21 @@
 extends Node2D
 
-var blocks = [preload("res://scenes/Blocks/TBlock.tscn"), preload("res://scenes/Blocks/LBlock.tscn")]
+const t_block = "res://scenes/Blocks/TBlock.tscn"
+const j_block = "res://scenes/Blocks/JBlock.tscn"
+const l_block = "res://scenes/Blocks/LBlock.tscn"
+const o_block = "res://scenes/Blocks/OBlock.tscn"
+const i_block = "res://scenes/Blocks/IBlock.tscn"
+const s_block = "res://scenes/Blocks/SBlock.tscn"
+const z_block = "res://scenes/Blocks/ZBlock.tscn"
+
+
+var blocks = [preload(t_block),
+	preload(j_block),
+	preload(l_block),
+	preload(o_block),
+	preload(i_block),
+	preload(s_block),
+	preload(z_block)]
 
 var rng = RandomNumberGenerator.new()
 var player : Player
@@ -8,7 +23,7 @@ var cur_block = 0
 
 @onready var timer = $Timer
 @onready var level = get_tree().get_current_scene()
-@export_enum("T", "L") var block_list: Array[int] = []
+@export_enum("T", "J", "L", "O", "I", "S", "Z") var block_list: Array[int] = []
 var spawned_blocks = []
 
 # Called when the node enters the scene tree for the first time.

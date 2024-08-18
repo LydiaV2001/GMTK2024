@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dku5o0us6sxc8"]
+[gd_scene load_steps=5 format=3 uid="uid://cosmeu3vbdlpp"]
 
-[ext_resource type="Script" path="res://scripts/block.gd" id="1_288gi"]
-[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="2_l3x0t"]
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_bnro4"]
+[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="2_ln67q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66uoh"]
-texture = ExtResource("2_l3x0t")
+texture = ExtResource("2_ln67q")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -27,19 +27,19 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_66uoh")
 
-[node name="JBlock" type="CharacterBody2D"]
+[node name="SBlock" type="CharacterBody2D"]
+scale = Vector2(1, -1)
 collision_layer = 2
 collision_mask = 3
-safe_margin = 0.001
-script = ExtResource("1_288gi")
+script = ExtResource("1_bnro4")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Block" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0, 255, 255, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0, 255, 255, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0, 255, 255, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_a44d6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-30, -30, 62, -30, 62, -2, -2, -2, -2, 31, -30, 31)
+polygon = PackedVector2Array(30, -30, 31, 2, 62, 2, 63, 30, 2, 30, 2, -3, -30, -3, -30, -30)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -20,7 +20,6 @@ signal on_landed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$CollisionPolygon2D.scale *= 0.95
 	gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	can_move = true;
 	

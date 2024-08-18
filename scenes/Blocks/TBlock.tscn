@@ -39,6 +39,6 @@ tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0, 25
 tile_set = SubResource("TileSet_a44d6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(13, 0, -32, 0, -32, -32, 0, -32, 0, -64, 32, -64, 32, -32, 64, -32, 64, 0)
+polygon = PackedVector2Array(-31, -1, -31, -31, 1, -31, 1, -63, 31, -63, 31, -31, 63, -31, 63, -1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

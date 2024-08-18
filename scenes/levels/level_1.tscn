@@ -41,7 +41,7 @@ shape = SubResource("WorldBoundaryShape2D_rbasi")
 position = Vector2(48, 400)
 
 [node name="BlockSpawner" parent="." instance=ExtResource("3_qx126")]
-block_list = Array[int]([0, 1, 0, 1])
+block_list = Array[int]([0, 2, 2, 3, 4, 5, 6])
 
 [node name="Goal" type="Area2D" parent="."]
 position = Vector2(824, 32)
