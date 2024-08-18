@@ -3,14 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_524w3"]
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_sfmky"]
 [ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_qx126"]
-[ext_resource type="Texture2D" uid="uid://bvvho1kks0p63" path="res://assets/Goal.png" id="4_ikajw"]
+[ext_resource type="PackedScene" uid="uid://bvw1fxiok878f" path="res://scenes/characters/evil_bush.tscn" id="4_nth2x"]
+[ext_resource type="PackedScene" uid="uid://dyghr8qjkkviw" path="res://scenes/characters/goal.tscn" id="5_0njcj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7nr7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rbasi"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eoct"]
-size = Vector2(32, 32)
 
 [node name="Level1" type="Node2D"]
 
@@ -43,15 +41,8 @@ position = Vector2(48, 400)
 [node name="BlockSpawner" parent="." instance=ExtResource("3_qx126")]
 block_list = Array[int]([0, 2, 2, 3, 4, 5, 6])
 
-[node name="Goal" type="Area2D" parent="."]
-position = Vector2(824, 32)
-collision_layer = 0
-collision_mask = 4
+[node name="EvilBush" parent="." instance=ExtResource("4_nth2x")]
+position = Vector2(543, 388)
 
-[node name="Sprite2D" type="Sprite2D" parent="Goal"]
-texture = ExtResource("4_ikajw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
-shape = SubResource("RectangleShape2D_5eoct")
-
-[connection signal="body_entered" from="Goal" to="Player" method="_on_goal_body_entered"]
+[node name="Goal" parent="." instance=ExtResource("5_0njcj")]
+position = Vector2(655, 391)
