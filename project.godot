@@ -42,7 +42,6 @@ FMod="*res://scenes/controllers/f_mod.tscn"
 
 window/size/viewport_width=854
 window/size/viewport_height=480
-window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 

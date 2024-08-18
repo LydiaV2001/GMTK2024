@@ -29,7 +29,7 @@ sources/0 = SubResource("TileSetAtlasSource_66uoh")
 
 [node name="TBlock" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 6
 script = ExtResource("2_sikfe")
 
 [node name="Timer" type="Timer" parent="."]

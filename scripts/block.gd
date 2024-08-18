@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 class_name Block
 
 @onready var timer = $Timer

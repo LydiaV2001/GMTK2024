@@ -1,95 +1,54 @@
-[gd_scene load_steps=10 format=4 uid="uid://br1lxau6bmujw"]
+[gd_scene load_steps=7 format=3 uid="uid://br1lxau6bmujw"]
 
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="1_vyito"]
-[ext_resource type="Texture2D" uid="uid://537lg066b3ii" path="res://assets/concrete.png" id="2_jy6av"]
 [ext_resource type="Texture2D" uid="uid://cetv2fvcf3hsf" path="res://assets/sky.png" id="3_5qy5b"]
 [ext_resource type="Texture2D" uid="uid://ya10o54fnuim" path="res://assets/Far Trees.png" id="4_q7o6n"]
 [ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="5_1crl6"]
 [ext_resource type="Texture2D" uid="uid://dkt6quuk0yixa" path="res://assets/Close Trees.png" id="5_4f7ti"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3poqt"]
-texture = ExtResource("2_jy6av")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_dwy42"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 2
-sources/1 = SubResource("TileSetAtlasSource_3poqt")
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1f7xm"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nckix"]
 
 [node name="PlayerTest" type="Node2D"]
 
+[node name="BlockSpawner" parent="." instance=ExtResource("5_1crl6")]
+position = Vector2(427, 0)
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-offset = Vector2(0, 80)
-transform = Transform2D(1, 0, 0, 1, 0, 80)
+offset = Vector2(427, 240)
+transform = Transform2D(1, 0, 0, 1, 427, 240)
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(1, 0)
-motion_offset = Vector2(0, 160)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
 texture = ExtResource("3_5qy5b")
 
 [node name="Far Trees" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(1, 0.5)
-motion_mirroring = Vector2(0, 960)
+motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Far Trees"]
 texture = ExtResource("4_q7o6n")
 
-[node name="Far Trees2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(1, 0.5)
-motion_offset = Vector2(0, 480)
-motion_mirroring = Vector2(0, 960)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Far Trees2"]
-texture = ExtResource("4_q7o6n")
-
 [node name="Close Trees" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(1, 2)
-motion_mirroring = Vector2(0, 960)
+motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Close Trees"]
 texture = ExtResource("5_4f7ti")
 
-[node name="Close Trees2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(1, 2)
-motion_offset = Vector2(0, 480)
-motion_mirroring = Vector2(0, 960)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Close Trees2"]
-texture = ExtResource("5_4f7ti")
-
-[node name="BlockSpawner" parent="." instance=ExtResource("5_1crl6")]
-position = Vector2(0, -60)
-
 [node name="Player" parent="." instance=ExtResource("1_vyito")]
-position = Vector2(0, 240)
+position = Vector2(427, 464)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -160)
-limit_left = -427
-limit_right = 427
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAABAAIAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAABAP7/AQAAAAAAAAABAP3/AQAAAAAAAAABAPz/AQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAACAAAAAQAAAAAAAAACAP//AQAAAAAAAAACAP7/AQAAAAAAAAACAP3/AQAAAAAAAAACAPz/AQAAAAAAAAD+//z/AQAAAAAAAAD9//z/AQAAAAAAAAD9//v/AQAAAAAAAAD+//v/AQAAAAAAAAD6//z/AQAAAAAAAAD5//z/AQAAAAAAAAD5//v/AQAAAAAAAAD6//v/AQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAABAAUAAQAAAAAAAAABAAYAAQAAAAAAAAABAAcAAQAAAAAAAAACAAcAAQAAAAAAAAACAAYAAQAAAAAAAAACAAUAAQAAAAAAAAACAAQAAQAAAAAAAAACAAMAAQAAAAAAAAABAPv/AQAAAAAAAAABAPr/AQAAAAAAAAABAPn/AQAAAAAAAAABAPj/AQAAAAAAAAABAPf/AQAAAAAAAAACAPf/AQAAAAAAAAACAPj/AQAAAAAAAAACAPn/AQAAAAAAAAACAPr/AQAAAAAAAAACAPv/AQAAAAAAAAABAPb/AQAAAAAAAAABAPX/AQAAAAAAAAABAPT/AQAAAAAAAAABAPP/AQAAAAAAAAABAPL/AQAAAAAAAAABAPH/AQAAAAAAAAABAPD/AQAAAAAAAAACAPb/AQAAAAAAAAACAPX/AQAAAAAAAAACAPT/AQAAAAAAAAACAPP/AQAAAAAAAAACAPL/AQAAAAAAAAACAPH/AQAAAAAAAAACAPD/AQAAAAAAAAACAO//AQAAAAAAAAABAO7/AQAAAAAAAAABAO3/AQAAAAAAAAABAOz/AQAAAAAAAAABAOv/AQAAAAAAAAABAOr/AQAAAAAAAAABAOn/AQAAAAAAAAABAO//AQAAAAAAAAACAOz/AQAAAAAAAAACAOv/AQAAAAAAAAACAOr/AQAAAAAAAAACAOn/AQAAAAAAAAACAOj/AQAAAAAAAAACAO7/AQAAAAAAAAACAO3/AQAAAAAAAAABAOj/AQAAAAAAAAABAOf/AQAAAAAAAAACAOf/AQAAAAAAAAACAOb/AQAAAAAAAAACAOX/AQAAAAAAAAABAOX/AQAAAAAAAAABAOb/AQAAAAAAAAA=")
-tile_set = SubResource("TileSet_dwy42")
+limit_left = 0
+limit_right = 854
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(0, 160)
+position = Vector2(0, 480)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(0, 96)
-shape = SubResource("WorldBoundaryShape2D_1f7xm")
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/MUSIC/MUSIC_Stage-A"
-event_guid = "{90c82652-d285-4eda-9f9b-4832cf971dc3}"
-autoplay = true
+shape = SubResource("WorldBoundaryShape2D_nckix")

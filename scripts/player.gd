@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -34,9 +35,11 @@ func climb():
 			velocity.y = move_toward(velocity.x, 0, SPEED)
 
 func _on_area_2d_body_entered(tile):
-	if tile is TileMapLayer:
+	print("climb")
+	if tile is Block:
 		can_climb = true
 
 func _on_area_2d_body_exited(tile):
-		if tile is TileMapLayer:
-			can_climb = false
+	print("exit")
+	if tile is Block:
+		can_climb = false
