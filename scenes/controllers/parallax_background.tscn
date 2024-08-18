@@ -8,21 +8,22 @@
 offset = Vector2(427, 240)
 transform = Transform2D(1, 0, 0, 1, 427, 240)
 
-[node name="Sky" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(1, 0)
+[node name="Leaves" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1, 0.1)
+motion_mirroring = Vector2(0, 480)
 
-[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+[node name="Sprite2D" type="Sprite2D" parent="Leaves"]
 texture = ExtResource("1_56o7s")
 
 [node name="Far Trees" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(1, 0.5)
+motion_scale = Vector2(1, 0.4)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="Far Trees"]
 texture = ExtResource("2_0l6vv")
 
 [node name="Close Trees" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(1, 2)
+motion_scale = Vector2(1, 0.8)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="Close Trees"]
