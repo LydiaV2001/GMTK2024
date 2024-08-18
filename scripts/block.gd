@@ -16,12 +16,14 @@ var can_move
 var rotating = false
 
 signal on_just_placed
+signal on_landed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CollisionPolygon2D.scale *= 0.95
 	gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	can_move = true;
+	
 	x_position = position.x
 	y_position = position.y
 	timer.start(0.5)
@@ -44,6 +46,7 @@ func _physics_process(_delta):
 			if is_on_floor() || is_on_wall():
 				on_just_placed.emit()
 				can_move = false
+				on_landed.emit()
 	else:
 		velocity.y += gravity*_delta
 		move_and_slide()
@@ -58,6 +61,10 @@ func _input(event):
 		block_rotate(PI/2)
 	if event.is_action_pressed("block_down"):
 		block_move(gravity_direction)
+		timer.start(0.15)
+	if event.is_action_released("block_down"):
+		timer.start(0.5)
+		
 
 func _on_timer_timeout():
 	block_move(gravity_direction)

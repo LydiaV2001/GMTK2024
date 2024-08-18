@@ -24,21 +24,21 @@ func _process(delta):
 	pass
 	
 func spawn_block():
-	# get random number
 	var new_block : Block = blocks[block_list[cur_block]].instantiate()
 	cur_block += 1
 	if cur_block == block_list.size():
 		cur_block = 0
+	
 	new_block.position.x = 427
 	new_block.position.y = player.position.y - 400
 	level.add_child.call_deferred(new_block)
-	print(new_block.global_position)
-	
+
+	new_block.on_landed.connect(spawn_block)
 	spawned_blocks.append(new_block)
 	if spawned_blocks.size() > block_list.size():
 		spawned_blocks.pop_front().queue_free()
 
 
 func _on_timer_timeout():
-	spawn_block()
+	#spawn_block()
 	timer.start(5)

@@ -39,7 +39,6 @@ func _on_area_2d_body_entered(tile):
 	if tile is Block:
 		if can_climb:
 			dont_turn_off_climb = true
-		print('can climb')
 		can_climb = true
 
 func _on_area_2d_body_exited(tile):
