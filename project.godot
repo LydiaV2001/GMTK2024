@@ -29,7 +29,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="GMTK2024"
-run/main_scene="res://scenes/player_test.tscn"
+run/main_scene="res://scenes/levels/level_1.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
@@ -42,6 +42,7 @@ FMod="*res://scenes/controllers/f_mod.tscn"
 
 window/size/viewport_width=854
 window/size/viewport_height=480
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 

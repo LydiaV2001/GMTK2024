@@ -41,3 +41,7 @@ func _on_area_2d_body_entered(tile):
 func _on_area_2d_body_exited(tile):
 	if tile is Block:
 		can_climb = false
+
+func _on_goal_body_entered(body):
+	print("GOAL!")
+	get_tree().reload_current_scene()
