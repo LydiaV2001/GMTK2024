@@ -16,11 +16,6 @@ position = Vector2(427, 0)
 [node name="Player" parent="." instance=ExtResource("1_vyito")]
 position = Vector2(427, 464)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -160)
-limit_left = 0
-limit_right = 854
-
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(0, 480)
 collision_layer = 4
