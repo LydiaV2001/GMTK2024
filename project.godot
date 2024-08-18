@@ -29,7 +29,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="GMTK2024"
-run/main_scene="res://scenes/player_test.tscn"
+run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
@@ -52,6 +52,10 @@ project/assembly_name="GMTK2024"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
+
+[gui]
+
+theme/custom_font="res://assets/Jokerman.otf"
 
 [input]
 
