@@ -4,9 +4,12 @@ var blocks = [preload("res://scenes/Blocks/TBlock.tscn"), preload("res://scenes/
 
 var rng = RandomNumberGenerator.new()
 var player : Player
+var cur_block = 0
 
 @onready var timer = $Timer
 @onready var level = get_tree().get_current_scene()
+@export_enum("T", "L") var block_list: Array[int] = []
+var spawned_blocks = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,11 +25,18 @@ func _process(delta):
 	
 func spawn_block():
 	# get random number
-	var random_number: int = rng.randi_range(0, blocks.size() - 1)
-	var new_block : Block = blocks[random_number].instantiate()
+	var new_block : Block = blocks[block_list[cur_block]].instantiate()
+	cur_block += 1
+	if cur_block == block_list.size():
+		cur_block = 0
 	new_block.position.x = 427
-	new_block.position.y = player.position.y - 480
-	level.add_child(new_block)
+	new_block.position.y = player.position.y - 400
+	level.add_child.call_deferred(new_block)
+	print(new_block.global_position)
+	
+	spawned_blocks.append(new_block)
+	if spawned_blocks.size() > block_list.size():
+		spawned_blocks.pop_front().queue_free()
 
 
 func _on_timer_timeout():
