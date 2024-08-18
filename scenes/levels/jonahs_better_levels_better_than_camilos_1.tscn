@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://be3mg2j064mef"]
+
+[ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_g0bot"]
+[ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_khuau"]
+[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_620sh"]
+[ext_resource type="Texture2D" uid="uid://bvvho1kks0p63" path="res://assets/Goal.png" id="4_feags"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p7uh1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_exjlo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0dne"]
+size = Vector2(32, 32)
+
+[node name="JonahsBetterLevelsBetterThanCamilos1" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_g0bot")]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Left Wall" type="StaticBody2D" parent="Walls"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall"]
+shape = SubResource("WorldBoundaryShape2D_p7uh1")
+
+[node name="Right Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(854, 0)
+rotation = 4.71239
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall"]
+shape = SubResource("WorldBoundaryShape2D_p7uh1")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(432, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape2D_exjlo")
+
+[node name="Player" parent="." instance=ExtResource("2_khuau")]
+position = Vector2(48, 400)
+
+[node name="BlockSpawner" parent="." instance=ExtResource("3_620sh")]
+block_list = Array[int]([0, 2, 2, 3, 4, 5, 6])
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2(824, 378)
+collision_layer = 0
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Goal"]
+texture = ExtResource("4_feags")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+shape = SubResource("RectangleShape2D_x0dne")
