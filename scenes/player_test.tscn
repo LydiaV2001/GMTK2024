@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://bt6qnuq0vy54q"]
+[gd_scene load_steps=10 format=4 uid="uid://br1lxau6bmujw"]
 
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="1_vyito"]
 [ext_resource type="Texture2D" uid="uid://537lg066b3ii" path="res://assets/concrete.png" id="2_jy6av"]
 [ext_resource type="Texture2D" uid="uid://cetv2fvcf3hsf" path="res://assets/sky.png" id="3_5qy5b"]
 [ext_resource type="Texture2D" uid="uid://ya10o54fnuim" path="res://assets/Far Trees.png" id="4_q7o6n"]
+[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="5_1crl6"]
 [ext_resource type="Texture2D" uid="uid://dkt6quuk0yixa" path="res://assets/Close Trees.png" id="5_4f7ti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3poqt"]
@@ -66,6 +67,9 @@ motion_mirroring = Vector2(0, 960)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Close Trees2"]
 texture = ExtResource("5_4f7ti")
 
+[node name="BlockSpawner" parent="." instance=ExtResource("5_1crl6")]
+position = Vector2(0, -60)
+
 [node name="Player" parent="." instance=ExtResource("1_vyito")]
 position = Vector2(0, 240)
 
@@ -84,3 +88,8 @@ position = Vector2(0, 160)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(0, 96)
 shape = SubResource("WorldBoundaryShape2D_1f7xm")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/MUSIC/MUSIC_Stage-A"
+event_guid = "{90c82652-d285-4eda-9f9b-4832cf971dc3}"
+autoplay = true

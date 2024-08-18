@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://q358hcy020g5"]
+[gd_scene load_steps=5 format=3 uid="uid://dqixqux5j2pg"]
 
 [ext_resource type="Script" path="res://scripts/title_scripts/title.gd" id="1_ooxgh"]
 [ext_resource type="PackedScene" uid="uid://drd0ih15vv0dj" path="res://scenes/controllers/fade_controller.tscn" id="2_rkbyh"]

@@ -5,14 +5,19 @@ class_name Block
 @onready var timer = $Timer
 @export var gravity_direction : Vector2i = Vector2i(0, 1)
 @onready var tile_map = $Block
+
 var gravity
 var x_position
 var y_position
 @onready var x_tween
 @onready var y_tween
 @onready var r_tween
+
 var can_move
 var rotating = false
+
+signal on_just_placed
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CollisionPolygon2D.scale *= 0.95
@@ -38,6 +43,7 @@ func _physics_process(_delta):
 						r_tween.stop()
 				move_and_slide()
 			if is_on_floor() || is_on_wall():
+				on_just_placed.emit()
 				can_move = false
 	else:
 		velocity.y += gravity*_delta
