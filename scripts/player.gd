@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var can_climb = false
+var dont_turn_off_climb = false
 
 func _physics_process(delta):
 	gravity(delta)
@@ -36,11 +37,18 @@ func climb():
 
 func _on_area_2d_body_entered(tile):
 	if tile is Block:
+		if can_climb:
+			dont_turn_off_climb = true
+		print('can climb')
 		can_climb = true
 
 func _on_area_2d_body_exited(tile):
 	if tile is Block:
-		can_climb = false
+		if dont_turn_off_climb == false:
+			can_climb = false
+		else:
+			dont_turn_off_climb = false
+		
 
 func _on_goal_body_entered(body):
 	print("GOAL!")
