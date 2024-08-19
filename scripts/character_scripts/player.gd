@@ -64,8 +64,3 @@ func _on_area_2d_body_exited(tile):
 			_animated_sprite.play("default");
 		else:
 			dont_turn_off_climb = false
-		
-
-func _on_goal_body_entered(body):
-	print("GOAL!")
-	get_tree().reload_current_scene()

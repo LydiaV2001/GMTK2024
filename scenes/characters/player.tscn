@@ -180,6 +180,9 @@ script = ExtResource("1_jhck7")
 position = Vector2(0, -160)
 limit_left = 0
 limit_right = 854
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_bottom_margin = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kfhxy")
