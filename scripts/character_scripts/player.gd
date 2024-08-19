@@ -55,6 +55,11 @@ func climb():
 		else:
 			velocity.y = move_toward(velocity.x, 0, SPEED)
 
+func player_die():
+	can_climb = false;
+	can_walk = false;
+	pass
+
 func _on_area_2d_body_entered(tile):
 	if tile is Block:
 		if can_climb:
