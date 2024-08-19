@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://5wy8upb45vhf"]
+
+[ext_resource type="Texture2D" uid="uid://tf75t5lrdl0q" path="res://assets/ui/bug_get.png" id="1_bwysl"]
+
+[node name="GoalText" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(427, 180)
+texture = ExtResource("1_bwysl")

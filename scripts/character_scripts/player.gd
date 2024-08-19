@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var can_climb = false
+@onready var can_walk = true
 var dont_turn_off_climb = false
 
 # Animation
@@ -22,18 +23,22 @@ func _physics_process(delta):
 func walk():
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("move_left", "move_right")
-	if direction:
-		_animated_sprite.play()
-		
-		if direction == -1:
-			_animated_sprite.flip_h = true;
-		elif direction == 1:
-			_animated_sprite.flip_h = false;
-		
-		velocity.x = direction * SPEED
+	
+	if can_walk:
+		var direction = Input.get_axis("move_left", "move_right")
+		if direction:
+			_animated_sprite.play()
+			
+			if direction == -1:
+				_animated_sprite.flip_h = true;
+			elif direction == 1:
+				_animated_sprite.flip_h = false;
+			
+			velocity.x = direction * SPEED
+		else:
+			_animated_sprite.stop()
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:
-		_animated_sprite.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 func gravity(delta):

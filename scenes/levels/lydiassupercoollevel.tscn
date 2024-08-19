@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://w8ytbysi4dnc"]
+
+[ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_e05b0"]
+[ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_3aab6"]
+[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_qr2nu"]
+[ext_resource type="PackedScene" uid="uid://bvw1fxiok878f" path="res://scenes/characters/evil_bush.tscn" id="4_ioa8d"]
+[ext_resource type="PackedScene" uid="uid://bhwu87glevutv" path="res://scenes/characters/goal.tscn" id="5_i8ke0"]
+[ext_resource type="Script" path="res://scripts/control_scripts/fmod_music_playback.gd" id="6_5ms2v"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7nr7"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rbasi"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_e05b0")]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Left Wall" type="StaticBody2D" parent="Walls"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall"]
+shape = SubResource("WorldBoundaryShape2D_j7nr7")
+
+[node name="Right Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(854, 0)
+rotation = 4.71239
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall"]
+shape = SubResource("WorldBoundaryShape2D_j7nr7")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(432, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape2D_rbasi")
+
+[node name="Player" parent="." instance=ExtResource("2_3aab6")]
+position = Vector2(48, 400)
+
+[node name="BlockSpawner" parent="." instance=ExtResource("3_qr2nu")]
+block_list = Array[int]([0, 2, 2, 3, 4, 5, 6])
+
+[node name="EvilBush" parent="." instance=ExtResource("4_ioa8d")]
+position = Vector2(543, 388)
+
+[node name="Goal" parent="." instance=ExtResource("5_i8ke0")]
+position = Vector2(205, 398)
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/MUSIC/MUSIC_Stage"
+event_guid = "{5bc23b83-33ed-4890-9e9a-46decadf7053}"
+autoplay = true
+event_parameter/Stage-Music/id = 7579048476086826073
+event_parameter/Stage-Music/value = "All"
+event_parameter/Stage-Music/labels = PackedStringArray("All", "Track A", "Track B", "Track C")
+event_parameter/Stage-Music/min_value = "All"
+event_parameter/Stage-Music/max_value = "Track C"
+event_parameter/Stage-Music/default_value = "All"
+event_parameter/Stage-Music/variant_type = 4
+script = ExtResource("6_5ms2v")
+
+[connection signal="goal_entered" from="Goal" to="FmodEventEmitter2D" method="_on_goal_goal_entered"]
