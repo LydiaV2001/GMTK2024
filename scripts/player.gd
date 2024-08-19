@@ -7,6 +7,12 @@ const JUMP_VELOCITY = -400.0
 @onready var can_climb = false
 var dont_turn_off_climb = false
 
+# Animation
+@onready var _animated_sprite = $AnimatedSprite2D
+
+func _ready() -> void:
+	_animated_sprite.play("default");
+
 func _physics_process(delta):
 	gravity(delta)
 	walk()
@@ -18,8 +24,16 @@ func walk():
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
+		_animated_sprite.play()
+		
+		if direction == -1:
+			_animated_sprite.flip_h = true;
+		elif direction == 1:
+			_animated_sprite.flip_h = false;
+		
 		velocity.x = direction * SPEED
 	else:
+		_animated_sprite.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 func gravity(delta):
@@ -40,11 +54,13 @@ func _on_area_2d_body_entered(tile):
 		if can_climb:
 			dont_turn_off_climb = true
 		can_climb = true
+		_animated_sprite.play("climb");
 
 func _on_area_2d_body_exited(tile):
 	if tile is Block:
 		if dont_turn_off_climb == false:
 			can_climb = false
+			_animated_sprite.play("default");
 		else:
 			dont_turn_off_climb = false
 		

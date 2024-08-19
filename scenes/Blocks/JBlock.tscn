@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbmhqjxin4k0e"]
 
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_4cqhu"]
-[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="2_3qnpq"]
+[ext_resource type="Texture2D" uid="uid://dnsgq0mjbp7qo" path="res://assets/dropblock.png" id="2_o5mu6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66uoh"]
-texture = ExtResource("2_3qnpq")
+texture = ExtResource("2_o5mu6")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -35,7 +35,7 @@ script = ExtResource("1_4cqhu")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Block" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 255, 255, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 255, 255, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_a44d6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
