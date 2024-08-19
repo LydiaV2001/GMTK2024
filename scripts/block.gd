@@ -49,9 +49,11 @@ func _physics_process(_delta):
 	else:
 		velocity.y += gravity*_delta
 		move_and_slide()
+	
 func _input(event):
 	#CHANGE THIS TO ALSO WORK WITH CONTROLLER!!!!!!!!!
-	
+	if event.is_action_pressed("clear"):
+		queue_free()
 	if event.is_action_pressed("block_right"):
 		block_move(Vector2i(1, 0))
 	if event.is_action_pressed("block_left"):
