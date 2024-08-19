@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf5ww5pb5yuai"]
+[gd_scene load_steps=8 format=3 uid="uid://baqk5lf6bkn7x"]
 
 [ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_g0bot"]
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_khuau"]

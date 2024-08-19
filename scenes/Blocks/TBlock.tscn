@@ -41,4 +41,9 @@ tile_set = SubResource("TileSet_a44d6")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-31, -1, -31, -31, 1, -31, 1, -63, 31, -63, 31, -31, 63, -31, 63, -1)
 
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/SFX/SOUND_Block-Place"
+event_guid = "{7d34bbb5-6ca8-49ed-95fd-ff80e83328d9}"
+autoplay = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

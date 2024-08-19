@@ -46,6 +46,7 @@ func climb():
 		var direction = Input.get_axis("move_up", "move_down")
 		if direction:
 			velocity.y = direction * SPEED
+			_animated_sprite.play()
 		else:
 			velocity.y = move_toward(velocity.x, 0, SPEED)
 

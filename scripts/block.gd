@@ -12,6 +12,8 @@ var y_position
 @onready var y_tween
 @onready var r_tween
 
+@onready var fmod_event = $FmodEventEmitter2D
+
 var can_move
 var rotating = false
 
@@ -46,6 +48,9 @@ func _physics_process(_delta):
 				on_just_placed.emit()
 				can_move = false
 				on_landed.emit()
+				
+				# play FMOD sound
+				fmod_event.play();
 	else:
 		velocity.y += gravity*_delta
 		move_and_slide()
