@@ -37,7 +37,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
+
+func _input(event):
+	#CHANGE THIS TO ALSO WORK WITH CONTROLLER!!!!!!!!!
+	if event.is_action_pressed("clear"):
+		spawned_blocks.clear()
+		spawn_block()
+
 func spawn_block():
 	var new_block : Block = blocks[block_list[cur_block]].instantiate()
 	cur_block += 1

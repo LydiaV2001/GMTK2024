@@ -1,15 +1,15 @@
-[gd_scene load_steps=9 format=4 uid="uid://be3mg2j064mef"]
+[gd_scene load_steps=9 format=4 uid="uid://gvfxrnxiyge0"]
 
-[ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_g0bot"]
-[ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_khuau"]
-[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_620sh"]
-[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="5_gtrg2"]
-[ext_resource type="PackedScene" uid="uid://dyghr8qjkkviw" path="res://scenes/characters/goal.tscn" id="5_k6ipi"]
+[ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_r1jqt"]
+[ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_6ol58"]
+[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_ynulb"]
+[ext_resource type="PackedScene" uid="uid://dyghr8qjkkviw" path="res://scenes/characters/goal.tscn" id="5_l43il"]
+[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="5_xap0m"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p7uh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1agv4"]
-texture = ExtResource("5_gtrg2")
+texture = ExtResource("5_xap0m")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -97,9 +97,9 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1agv4")
 
-[node name="JonahsBetterLevelsBetterThanCamilos2" type="Node2D"]
+[node name="JonahsBetterLevelsBetterThanCamilos1" type="Node2D"]
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_g0bot")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_r1jqt")]
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -116,15 +116,15 @@ rotation = 4.71239
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall"]
 shape = SubResource("WorldBoundaryShape2D_p7uh1")
 
-[node name="Player" parent="." instance=ExtResource("2_khuau")]
+[node name="Player" parent="." instance=ExtResource("2_6ol58")]
 position = Vector2(48, 400)
 
-[node name="BlockSpawner" parent="." instance=ExtResource("3_620sh")]
-block_list = Array[int]([4, 4, 4, 4, 4])
+[node name="BlockSpawner" parent="." instance=ExtResource("3_ynulb")]
+block_list = Array[int]([5, 4, 2, 3, 0])
 
 [node name="TileMap" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAA4AAAACAAEAAAABAA4AAAACAAEAAAACAA4AAAACAAEAAAADAA4AAAACAAEAAAADAA0AAAACAAEAAAACAA0AAAACAAEAAAABAA0AAAACAAEAAAAAAA0AAAACAAEAAAAaAA0AAAACAAEAAAAZAA0AAAACAAEAAAAYAA0AAAACAAEAAAAXAA0AAAACAAEAAAAXAA4AAAACAAEAAAAYAA4AAAACAAEAAAAZAA4AAAACAAEAAAAaAA4AAAACAAEAAAAEAA0AAAACAAEAAAAFAA0AAAACAAEAAAAGAA0AAAACAAEAAAAHAA0AAAACAAEAAAAHAA4AAAACAAEAAAAGAA4AAAACAAEAAAAFAA4AAAACAAEAAAAEAA4AAAACAAEAAAAWAA0AAAACAAEAAAAVAA0AAAACAAEAAAAUAA0AAAACAAEAAAATAA0AAAACAAEAAAATAA4AAAACAAEAAAAUAA4AAAACAAEAAAAVAA4AAAACAAEAAAAWAA4AAAACAAEAAAAHAAwAAAACAAEAAAAHAAsAAAACAAEAAAAGAAwAAAACAAEAAAAGAAsAAAACAAEAAAAGAAoAAAACAAEAAAAHAAoAAAACAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAA4AAAACAAEAAAABAA4AAAACAAEAAAACAA4AAAACAAEAAAADAA4AAAACAAEAAAADAA0AAAACAAEAAAACAA0AAAACAAEAAAABAA0AAAACAAEAAAAAAA0AAAACAAEAAAAaAA0AAAACAAEAAAAZAA0AAAACAAEAAAAYAA0AAAACAAEAAAAXAA0AAAACAAEAAAAXAA4AAAACAAEAAAAYAA4AAAACAAEAAAAZAA4AAAACAAEAAAAaAA4AAAACAAEAAAAEAA0AAAACAAEAAAAFAA0AAAACAAEAAAAGAA0AAAACAAEAAAAHAA0AAAACAAEAAAAHAA4AAAACAAEAAAAGAA4AAAACAAEAAAAFAA4AAAACAAEAAAAEAA4AAAACAAEAAAAWAA0AAAACAAEAAAAWAA4AAAACAAEAAAAHAAwAAAACAAEAAAAHAAsAAAACAAEAAAAMAA4AAAACAAEAAAANAA4AAAACAAEAAAAOAA4AAAACAAEAAAAPAA4AAAACAAEAAAAaAAMAAAACAAEAAAAaAAQAAAACAAEAAAAaAAUAAAACAAEAAAAaAAYAAAACAAEAAAAaAAcAAAACAAEAAAAaAAgAAAACAAEAAAAaAAkAAAACAAEAAAAaAAoAAAACAAEAAAAaAAsAAAACAAEAAAAaAAwAAAACAAEAAAAGAAwAAAACAAEAAAAGAAsAAAACAAEAAAAOAAcAAAACAAEAAAANAAcAAAACAAEAAAAMAAcAAAACAAEAAAAVAA0AAAACAAEAAAAVAA4AAAACAAEAAAAVAA8AAAACAAEAAAAUAA4AAAACAAEAAAAUAA0AAAACAAEAAAAZAAUAAAACAAEAAAAYAAUAAAACAAEAAAAZAAYAAAACAAEAAAAZAAcAAAACAAEAAAAFAAYAAAACAAEAAAAGAAYAAAACAAEAAAAHAAYAAAACAAEAAAAMAAgAAAACAAEAAAANAAgAAAACAAEAAAAOAAgAAAACAAEAAAAPAAgAAAACAAEAAAAPAAcAAAACAAEAAAAQAAcAAAACAAEAAAARAAcAAAACAAEAAAAEAAYAAAACAAEAAAADAAYAAAACAAEAAAACAAYAAAACAAEAAAABAAYAAAACAAEAAAAAAAYAAAACAAEAAAAMAA0AAAACAAEAAAAMAAwAAAACAAEAAAAMAAsAAAACAAEAAAAMAAoAAAACAAEAAAAMAAkAAAACAAEAAAASAAcAAAACAAEAAAATAAcAAAACAAEAAAA=")
 tile_set = SubResource("TileSet_vuc16")
 
-[node name="Goal" parent="." instance=ExtResource("5_k6ipi")]
-position = Vector2(752, 400)
+[node name="Goal" parent="." instance=ExtResource("5_l43il")]
+position = Vector2(432, 432)
