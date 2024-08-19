@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqixqux5j2pg"]
+[gd_scene load_steps=7 format=3 uid="uid://dqixqux5j2pg"]
 
 [ext_resource type="Script" path="res://scripts/title_scripts/title.gd" id="1_ooxgh"]
 [ext_resource type="PackedScene" uid="uid://drd0ih15vv0dj" path="res://scenes/controllers/fade_controller.tscn" id="2_rkbyh"]
 [ext_resource type="Script" path="res://scripts/title_scripts/title_background.gd" id="2_yboh1"]
 [ext_resource type="Texture2D" uid="uid://dwaog8eid11ke" path="res://assets/title_placeholders/titled.png" id="3_efgg3"]
+[ext_resource type="Shader" path="res://Shaders/title.gdshader" id="4_ud03g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s16eh"]
+shader = ExtResource("4_ud03g")
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_ooxgh")
@@ -13,6 +17,13 @@ script = ExtResource("1_ooxgh")
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 texture_repeat = 2
 position = Vector2(192, 160)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup"]
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_s16eh")
+position = Vector2(235, 80)
+texture = ExtResource("3_efgg3")
 
 [node name="Button" type="Button" parent="CanvasGroup"]
 offset_left = 86.0
@@ -28,12 +39,6 @@ script = ExtResource("2_yboh1")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground"]
 texture_repeat = 2
 motion_mirroring = Vector2(64, 64)
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/ParallaxLayer"]
-texture_filter = 2
-texture_repeat = 2
-position = Vector2(427, 240)
-texture = ExtResource("3_efgg3")
 
 [node name="Label" type="Label" parent="CanvasGroup"]
 offset_left = -159.0
