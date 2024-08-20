@@ -1,15 +1,16 @@
-[gd_scene load_steps=9 format=4 uid="uid://drlvsk75udurw"]
+[gd_scene load_steps=10 format=4 uid="uid://bqfs05kkpp5hg"]
 
 [ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_nyfq3"]
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_rrjv6"]
 [ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_fcvs5"]
-[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="4_4emer"]
+[ext_resource type="Texture2D" uid="uid://lq1joxu1lxxr" path="res://assets/tiles.png" id="4_truol"]
 [ext_resource type="PackedScene" uid="uid://bhwu87glevutv" path="res://scenes/characters/goal.tscn" id="5_27qri"]
+[ext_resource type="PackedScene" uid="uid://bvw1fxiok878f" path="res://scenes/characters/evil_bush.tscn" id="6_36a48"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p7uh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1agv4"]
-texture = ExtResource("4_4emer")
+texture = ExtResource("4_truol")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -128,3 +129,7 @@ tile_set = SubResource("TileSet_vuc16")
 
 [node name="Goal" parent="." instance=ExtResource("5_27qri")]
 position = Vector2(432, 432)
+
+[node name="EvilBush" parent="." instance=ExtResource("6_36a48")]
+position = Vector2(189, 505)
+scale = Vector2(56, 1)

@@ -61,7 +61,6 @@ func _physics_process(_delta):
 		move_and_slide()
 	
 func _input(event):
-	#CHANGE THIS TO ALSO WORK WITH CONTROLLER!!!!!!!!!
 	if event.is_action_pressed("clear"):
 		queue_free()
 	if event.is_action_pressed("block_right"):

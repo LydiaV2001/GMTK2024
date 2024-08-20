@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://iyo755odirxx"]
+[gd_scene load_steps=8 format=3 uid="uid://cwwq448p2ox7x"]
 
-[ext_resource type="Script" path="res://scripts/title_scripts/title.gd" id="1_r1eit"]
+[ext_resource type="Script" path="res://scripts/control_scripts/credits.gd" id="1_b1nbq"]
 [ext_resource type="PackedScene" uid="uid://drd0ih15vv0dj" path="res://scenes/controllers/fade_controller.tscn" id="2_bqvut"]
 [ext_resource type="Shader" path="res://Shaders/title.gdshader" id="3_1txou"]
-[ext_resource type="Texture2D" uid="uid://dwaog8eid11ke" path="res://assets/title_placeholders/titled.png" id="4_iofbp"]
+[ext_resource type="Texture2D" uid="uid://oneewg6owa0u" path="res://assets/title_placeholders/credits_titled.png" id="4_34g5w"]
 [ext_resource type="Script" path="res://scripts/title_scripts/title_background.gd" id="5_i6ibu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s16eh"]
@@ -13,7 +13,7 @@ shader = ExtResource("3_1txou")
 font_size = 50
 
 [node name="Credits" type="Node2D"]
-script = ExtResource("1_r1eit")
+script = ExtResource("1_b1nbq")
 
 [node name="FadeController" parent="." instance=ExtResource("2_bqvut")]
 
@@ -26,15 +26,15 @@ texture_filter = 2
 texture_repeat = 2
 material = SubResource("ShaderMaterial_s16eh")
 position = Vector2(235, 80)
-texture = ExtResource("4_iofbp")
+texture = ExtResource("4_34g5w")
 
 [node name="Button" type="Button" parent="CanvasGroup"]
-offset_left = 86.0
-offset_top = 114.0
-offset_right = 355.0
-offset_bottom = 193.0
+offset_left = 56.0
+offset_top = 216.0
+offset_right = 400.0
+offset_bottom = 295.0
 theme_override_font_sizes/font_size = 48
-text = "Start Game"
+text = "Return to title"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasGroup"]
 script = ExtResource("5_i6ibu")
@@ -44,10 +44,10 @@ texture_repeat = 2
 motion_mirroring = Vector2(64, 64)
 
 [node name="Label" type="Label" parent="CanvasGroup"]
-offset_left = -108.0
-offset_top = -101.0
-offset_right = 705.0
-offset_bottom = -13.0
+offset_left = -112.0
+offset_top = -120.0
+offset_right = 701.0
+offset_bottom = -32.0
 scale = Vector2(1.025, 1.025)
 text = "You win! Thanks for playing"
 label_settings = SubResource("LabelSettings_7nq6i")
@@ -57,4 +57,18 @@ event_name = "event:/MUSIC/MUSIC_Stage-A"
 event_guid = "{90c82652-d285-4eda-9f9b-4832cf971dc3}"
 autoplay = true
 
+[node name="Label" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 152.0
+offset_right = 658.0
+offset_bottom = 338.0
+text = "Game / Level Design, Programming - Camilo Sanchez Porras
+
+Game / Level Design, Programming, Shaders - Jonah Morgan
+
+Game Design, Programming, Art - lyd
+
+Game Design, Music, Sound Effects - Funbil"
+
 [connection signal="on_fade_out" from="FadeController" to="." method="_on_fade_controller_on_fade_out"]
+[connection signal="pressed" from="CanvasGroup/Button" to="." method="_on_button_pressed"]

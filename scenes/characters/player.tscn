@@ -201,7 +201,7 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_eu4qx")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.5
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
 event_name = "event:/SFX/SOUND_Menu-Cancel"

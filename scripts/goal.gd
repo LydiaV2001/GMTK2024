@@ -26,6 +26,9 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body is Player:
+		# stop stage theme
+		GameManager.stop_music();
+		
 		goal_entered.emit();
 		
 		# stop player from moving.

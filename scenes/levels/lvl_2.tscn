@@ -1,16 +1,16 @@
-[gd_scene load_steps=10 format=4 uid="uid://d3y0qlqomxnrm"]
+[gd_scene load_steps=10 format=4 uid="uid://cyqbo7abumfdn"]
 
 [ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_vqe6j"]
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_hs6s6"]
 [ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_6fxkb"]
 [ext_resource type="PackedScene" uid="uid://bvw1fxiok878f" path="res://scenes/characters/evil_bush.tscn" id="4_cxe51"]
 [ext_resource type="PackedScene" uid="uid://bhwu87glevutv" path="res://scenes/characters/goal.tscn" id="5_slgo2"]
-[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="6_m1t38"]
+[ext_resource type="Texture2D" uid="uid://lq1joxu1lxxr" path="res://assets/tiles.png" id="6_cmpbg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7nr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0m1ga"]
-texture = ExtResource("6_m1t38")
+texture = ExtResource("6_cmpbg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -153,5 +153,10 @@ scale = Vector2(20, 1)
 position = Vector2(800, 32)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAA0AAAABAAAAAAABAA0AAAABAAAAAAACAA0AAAABAAAAAAADAA0AAAABAAAAAAAEAA0AAAABAAAAAAAFAA0AAAABAAAAAAAGAA0AAAABAAAAAAAHAA0AAAABAAAAAAAIAA0AAAABAAAAAAAJAA0AAAABAAAAAAAJAA4AAAABAAAAAAAIAA4AAAABAAAAAAAHAA4AAAABAAAAAAAGAA4AAAABAAAAAAAFAA4AAAABAAAAAAAEAA4AAAABAAAAAAADAA4AAAABAAAAAAACAA4AAAABAAAAAAABAA4AAAABAAAAAAAAAA4AAAABAAAAAAAJAAwAAAABAAAAAAAJAAsAAAABAAAAAAAJAAoAAAABAAAAAAAJAAkAAAABAAAAAAAJAAgAAAABAAAAAAALAAgAAAABAAAAAAAKAAgAAAABAAAAAAAMAAgAAAABAAAAAAANAAgAAAABAAAAAAAUAAYAAAABAAAAAAAVAAYAAAABAAAAAAAWAAYAAAABAAAAAAAXAAYAAAABAAAAAAAYAAYAAAABAAAAAAAaAAYAAAABAAAAAAAZAAYAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAA0AAAAAAAAAAAABAA0AAAAAAAAAAAACAA0AAAAAAAAAAAADAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAABAAAAAAAJAA4AAAABAAAAAAAIAA4AAAABAAAAAAAHAA4AAAABAAAAAAAGAA4AAAABAAAAAAAFAA4AAAABAAAAAAAEAA4AAAABAAAAAAADAA4AAAABAAAAAAACAA4AAAABAAAAAAABAA4AAAABAAAAAAAAAA4AAAABAAAAAAAJAAwAAAABAAAAAAAJAAsAAAABAAAAAAAJAAoAAAABAAAAAAAJAAkAAAABAAAAAAAJAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAUAAYAAAAAAAAAAAAVAAYAAAAAAAAAAAAWAAYAAAAAAAAAAAAXAAYAAAAAAAAAAAAYAAYAAAAAAAAAAAAaAAYAAAAAAAAAAAAZAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_5hn72")
+
+[node name="EvilBush9" parent="." instance=ExtResource("4_cxe51")]
+visible = false
+position = Vector2(449, 498)
+scale = Vector2(63.15, 1)

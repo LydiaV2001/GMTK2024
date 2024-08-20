@@ -46,6 +46,9 @@ func walk():
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if Input.is_action_just_pressed("debug_next_level"):
+		GameManager.next_level();
 
 func gravity(delta):
 	# Add the gravity.
@@ -71,6 +74,9 @@ func player_die():
 	
 	# play sound
 	_emitter.play();
+	 
+	# make it look the part
+	_animated_sprite.flip_v = true
 	
 	# set timer
 	_death_timer.start();
