@@ -1,4 +1,4 @@
 [gd_scene format=3 uid="uid://domnh3fnx7k5p"]
 
 [node name="Fmod" type="FmodBankLoader"]
-bank_paths = ["res://assets/fmod_banks/Music.bank", "res://assets/fmod_banks/SFX.bank", "res://assets/fmod_banks/Master.strings.bank", "res://assets/fmod_banks/Master.bank"]
+bank_paths = ["res://assets/fmod_banks/Master.strings.bank", "res://assets/fmod_banks/Master.bank", "res://assets/fmod_banks/Music.bank", "res://assets/fmod_banks/SFX.bank"]

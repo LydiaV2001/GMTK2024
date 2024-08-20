@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnkgnqsic86k6"]
+
+[ext_resource type="Script" path="res://scripts/control_scripts/select_screen.gd" id="1_7yv24"]
+[ext_resource type="PackedScene" uid="uid://drd0ih15vv0dj" path="res://scenes/controllers/fade_controller.tscn" id="2_n0bi7"]
+[ext_resource type="Shader" path="res://Shaders/title.gdshader" id="3_xfs2s"]
+[ext_resource type="Texture2D" uid="uid://oneewg6owa0u" path="res://assets/title_placeholders/credits_titled.png" id="4_rfe1h"]
+[ext_resource type="Script" path="res://scripts/title_scripts/title_background.gd" id="5_g4sm6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s16eh"]
+shader = ExtResource("3_xfs2s")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7nq6i"]
+font_size = 50
+
+[node name="SelectScreen" type="Node2D"]
+script = ExtResource("1_7yv24")
+
+[node name="FadeController" parent="." instance=ExtResource("2_n0bi7")]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+texture_repeat = 2
+position = Vector2(192, 160)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup"]
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_s16eh")
+position = Vector2(235, 80)
+texture = ExtResource("4_rfe1h")
+
+[node name="Button" type="Button" parent="CanvasGroup"]
+offset_left = 56.0
+offset_top = 216.0
+offset_right = 400.0
+offset_bottom = 295.0
+theme_override_font_sizes/font_size = 48
+text = "Start Game"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasGroup"]
+script = ExtResource("5_g4sm6")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground"]
+texture_repeat = 2
+motion_mirroring = Vector2(64, 64)
+
+[node name="Label" type="Label" parent="CanvasGroup"]
+offset_top = -128.0
+offset_right = 459.0
+offset_bottom = -40.0
+scale = Vector2(1.025, 1.025)
+text = "=OPTION SELECT="
+label_settings = SubResource("LabelSettings_7nq6i")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasGroup"]
+offset_left = 200.0
+offset_top = -8.0
+offset_right = 251.0
+offset_bottom = 16.0
+text = "Music:"
+
+[node name="ItemList" type="ItemList" parent="CanvasGroup"]
+offset_left = 88.0
+offset_top = 32.0
+offset_right = 360.0
+offset_bottom = 160.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+item_count = 4
+item_0/text = "All Tracks (Randomized)"
+item_1/text = "Track A"
+item_2/text = "Track B"
+item_3/text = "Track C"
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/SFX/SOUND_Menu-Move"
+event_guid = "{b2f5917f-0f74-4871-a8bb-170cc36c7897}"
+
+[connection signal="on_fade_out" from="FadeController" to="." method="_on_fade_controller_on_fade_out"]
+[connection signal="pressed" from="CanvasGroup/Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="CanvasGroup/ItemList" to="." method="_on_item_list_item_selected"]
