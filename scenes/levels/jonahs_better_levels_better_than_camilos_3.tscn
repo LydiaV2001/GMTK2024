@@ -98,7 +98,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1agv4")
 
-[node name="JonahsBetterLevelsBetterThanCamilos2" type="Node2D"]
+[node name="JonahsBetterLevelsBetterThanCamilos3" type="Node2D"]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_6vg2d")]
 
