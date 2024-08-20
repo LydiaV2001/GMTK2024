@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhwu87glevutv"]
+[gd_scene load_steps=8 format=3 uid="uid://bhwu87glevutv"]
 
 [ext_resource type="Script" path="res://scripts/goal.gd" id="1_qa3ae"]
 [ext_resource type="Texture2D" uid="uid://c8gfkq07hs0lj" path="res://assets/collectibles/bug.png" id="2_604gy"]
+[ext_resource type="Shader" path="res://Shaders/bug.gdshader" id="2_dxryh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqj1k"]
+shader = ExtResource("2_dxryh")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gej0q"]
 atlas = ExtResource("2_604gy")
@@ -28,6 +32,7 @@ collision_mask = 4
 script = ExtResource("1_qa3ae")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_jqj1k")
 sprite_frames = SubResource("SpriteFrames_n2s1q")
 frame_progress = 0.067857
 

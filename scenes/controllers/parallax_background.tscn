@@ -1,18 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbupr6pgt7p5q"]
+[gd_scene load_steps=8 format=3 uid="uid://cbupr6pgt7p5q"]
 
+[ext_resource type="Shader" path="res://Shaders/leaf.gdshader" id="1_4b5jl"]
 [ext_resource type="Texture2D" uid="uid://cetv2fvcf3hsf" path="res://assets/sky.png" id="1_56o7s"]
 [ext_resource type="Texture2D" uid="uid://ya10o54fnuim" path="res://assets/Far Trees.png" id="2_0l6vv"]
 [ext_resource type="Texture2D" uid="uid://dkt6quuk0yixa" path="res://assets/Close Trees.png" id="3_2m8wl"]
+
+[sub_resource type="Gradient" id="Gradient_thg42"]
+colors = PackedColorArray(0.0297126, 0.132576, 0.0962399, 1, 0.982593, 1, 0.783705, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ek84"]
+gradient = SubResource("Gradient_thg42")
+fill_from = Vector2(0.495413, 0.00917431)
+fill_to = Vector2(0.536697, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ry50"]
+shader = ExtResource("1_4b5jl")
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 offset = Vector2(427, 240)
 transform = Transform2D(1, 0, 0, 1, 427, 240)
 
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1, 0.01)
+
+[node name="Sprite2D" type="TextureRect" parent="ParallaxLayer"]
+custom_minimum_size = Vector2(1000, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_5ek84")
+
 [node name="Leaves" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(1, 0.1)
+motion_scale = Vector2(0.3, 0.1)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="Leaves"]
+material = SubResource("ShaderMaterial_8ry50")
 texture = ExtResource("1_56o7s")
 
 [node name="Far Trees" type="ParallaxLayer" parent="."]

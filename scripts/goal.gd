@@ -45,8 +45,7 @@ func _on_body_entered(body):
 		# play music
 		fmod_event.play();
 		
-		# update stage index
-		GameManager.index += 1;
+		collision_layer = 0
 		
 
 func _on_timer_timeout() -> void:
