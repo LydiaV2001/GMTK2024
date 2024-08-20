@@ -3,7 +3,7 @@ class_name Block
 
 @onready var timer = $Timer
 @export var gravity_direction : Vector2i = Vector2i(0, 1)
-@onready var tile_map = $Block
+@onready var tile_map
 
 var gravity
 var x_position
@@ -13,6 +13,7 @@ var y_position
 @onready var r_tween
 
 @onready var fmod_event = $FmodEventEmitter2D
+@onready var warning_shader = preload("res://Shaders/warning.gdshader");
 
 var can_move
 var rotating = false
@@ -24,6 +25,10 @@ signal on_landed
 func _ready():
 	gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	can_move = true;
+	for node in get_children():
+		if node is TileMapLayer:
+			tile_map = node
+			break
 	
 	x_position = position.x
 	y_position = position.y
@@ -94,3 +99,7 @@ func block_rotate(r):
 
 func not_rotating():
 	rotating = false
+
+func warning():
+	tile_map.material = ShaderMaterial.new()
+	tile_map.material.shader = warning_shader
