@@ -52,11 +52,6 @@ scale = Vector2(1.025, 1.025)
 text = "You win! Thanks for playing"
 label_settings = SubResource("LabelSettings_7nq6i")
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/MUSIC/MUSIC_Stage-A"
-event_guid = "{90c82652-d285-4eda-9f9b-4832cf971dc3}"
-autoplay = true
-
 [node name="Label" type="Label" parent="."]
 offset_left = 184.0
 offset_top = 152.0

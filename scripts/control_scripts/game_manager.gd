@@ -23,6 +23,8 @@ func _ready() -> void:
 	fmod_object.set_event_guid("{5bc23b83-33ed-4890-9e9a-46decadf7053}");
 	fmod_object.set_event_name("event:/MUSIC/MUSIC_Stage");
 	
+	fmod_object.set_parameter("Stage-Music", 2);
+	
 
 func _physics_process(delta):
 	# pause functionality
@@ -39,7 +41,12 @@ func stop_music():
 func next_level():
 	# if we reach the end of the line, load the credits screen
 	if index >= levels.size():
+		# reset the level index (if the player wants to play again)
+		index = 0;
 		get_tree().change_scene_to_file("res://scenes/credits.tscn")
+		
+		# stop the music
+		stop_music();
 	# otherwise, load the next level
 	else:
 		get_tree().change_scene_to_file(levels[index])
