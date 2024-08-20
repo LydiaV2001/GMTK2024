@@ -42,8 +42,14 @@ func _on_body_entered(body):
 		# play music
 		fmod_event.play();
 		
+		# update stage index
+		GameManager.index += 1;
+		
 
 func _on_timer_timeout() -> void:
 	# load the next stage
-	get_tree().change_scene_to_file(GameManager.levels[1])
+	
+	# if we reach the end of the list, load credits or title. 
+	
+	get_tree().change_scene_to_file(GameManager.levels[GameManager.index])
 	pass # Replace with function body.

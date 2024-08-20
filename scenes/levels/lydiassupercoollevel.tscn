@@ -43,10 +43,10 @@ position = Vector2(48, 400)
 block_list = Array[int]([0, 2, 2, 3, 4, 5, 6])
 
 [node name="EvilBush" parent="." instance=ExtResource("4_ioa8d")]
-position = Vector2(130, 392)
+position = Vector2(651, 384)
 
 [node name="Goal" parent="." instance=ExtResource("5_i8ke0")]
-position = Vector2(481, 339)
+position = Vector2(125, 402)
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
 event_name = "event:/MUSIC/MUSIC_Stage"
