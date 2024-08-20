@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_sfmky"]
 [ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_qx126"]
 [ext_resource type="PackedScene" uid="uid://bvw1fxiok878f" path="res://scenes/characters/evil_bush.tscn" id="4_nth2x"]
-[ext_resource type="PackedScene" uid="uid://bhwu87glevutv" path="res://scenes/characters/goal.tscn" id="5_0njcj"]
+[ext_resource type="PackedScene" uid="uid://dyghr8qjkkviw" path="res://scenes/characters/goal.tscn" id="5_0njcj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7nr7"]
 
