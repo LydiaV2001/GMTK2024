@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dieuo7tas58b"]
+[gd_scene load_steps=6 format=3 uid="uid://dieuo7tas58b"]
 
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_bnro4"]
+[ext_resource type="Material" uid="uid://ci38alsmkvo2v" path="res://Shaders/blank_shader.tres" id="2_5j7nk"]
 [ext_resource type="Texture2D" uid="uid://dnsgq0mjbp7qo" path="res://assets/dropblock.png" id="2_txs3u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66uoh"]
@@ -35,6 +36,7 @@ script = ExtResource("1_bnro4")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Block" type="TileMapLayer" parent="."]
+material = ExtResource("2_5j7nk")
 tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_a44d6")
 

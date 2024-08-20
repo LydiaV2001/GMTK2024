@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dku5o0us6sxc8"]
+[gd_scene load_steps=7 format=3 uid="uid://dku5o0us6sxc8"]
 
+[ext_resource type="Shader" path="res://Shaders/warning.gdshader" id="1_5cvx2"]
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_288gi"]
 [ext_resource type="Texture2D" uid="uid://dnsgq0mjbp7qo" path="res://assets/dropblock.png" id="2_exvrp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w84nf"]
+shader = ExtResource("1_5cvx2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66uoh"]
 texture = ExtResource("2_exvrp")
@@ -28,6 +32,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_66uoh")
 
 [node name="JBlock" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_w84nf")
 collision_layer = 2
 collision_mask = 3
 safe_margin = 0.001

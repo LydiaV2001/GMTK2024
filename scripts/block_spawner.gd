@@ -58,6 +58,9 @@ func spawn_block():
 	spawned_blocks.append(new_block)
 	if spawned_blocks.size() > block_list.size():
 		spawned_blocks.pop_front().queue_free()
+		spawned_blocks[0].warning()
+	elif spawned_blocks.size() == block_list.size():
+		spawned_blocks[0].warning()
 
 
 func _on_timer_timeout():
