@@ -201,7 +201,15 @@ collision_mask = 2
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_eu4qx")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/SFX/SOUND_Menu-Cancel"
+event_guid = "{a8bc8d1d-3eb9-40ab-b753-3ea4e28b4066}"
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

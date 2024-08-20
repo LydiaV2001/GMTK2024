@@ -8,6 +8,12 @@ const JUMP_VELOCITY = -400.0
 @onready var can_walk = true
 var dont_turn_off_climb = false
 
+# death stuff
+@onready var _death_timer = $Timer
+@onready var _emitter = $FmodEventEmitter2D
+@onready var _collider_one = $Area2D/CollisionShape2D
+@onready var _collider_two = $CollisionShape2D
+
 # Animation
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -58,6 +64,17 @@ func climb():
 func player_die():
 	can_climb = false;
 	can_walk = false;
+	
+	# disable player colliders.
+	_collider_one.disabled = true
+	_collider_two.disabled = true;
+	
+	# play sound
+	_emitter.play();
+	
+	# set timer
+	_death_timer.start();
+	
 	pass
 
 func _on_area_2d_body_entered(tile):
@@ -74,3 +91,9 @@ func _on_area_2d_body_exited(tile):
 			_animated_sprite.play("default");
 		else:
 			dont_turn_off_climb = false
+
+
+func _on_timer_timeout() -> void:
+	# call stage restart. 
+	get_tree().reload_current_scene()
+	pass # Replace with function body.

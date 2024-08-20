@@ -10,10 +10,14 @@ class_name Goal
 # reference to goal text
 @onready var goal_text = preload("res://scenes/ui/goal_text.tscn");
 
+# animation reference
+@onready var animation = $Sprite2D;
+
 signal goal_entered;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	animation.play();
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

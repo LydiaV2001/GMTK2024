@@ -43,15 +43,14 @@ position = Vector2(48, 400)
 block_list = Array[int]([0, 2, 2, 3, 4, 5, 6])
 
 [node name="EvilBush" parent="." instance=ExtResource("4_ioa8d")]
-position = Vector2(543, 388)
+position = Vector2(130, 392)
 
 [node name="Goal" parent="." instance=ExtResource("5_i8ke0")]
-position = Vector2(205, 398)
+position = Vector2(481, 339)
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
 event_name = "event:/MUSIC/MUSIC_Stage"
 event_guid = "{5bc23b83-33ed-4890-9e9a-46decadf7053}"
-autoplay = true
 event_parameter/Stage-Music/id = 7579048476086826073
 event_parameter/Stage-Music/value = "All"
 event_parameter/Stage-Music/labels = PackedStringArray("All", "Track A", "Track B", "Track C")

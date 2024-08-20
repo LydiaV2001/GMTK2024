@@ -12,4 +12,5 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body is Player:
-		get_tree().reload_current_scene()
+		body.player_die();
+		#get_tree().reload_current_scene()
