@@ -1,9 +1,6 @@
 extends Area2D
 class_name Goal
 
-# fmod reference
-@onready var fmod_event = $FmodEventEmitter2D
-
 # reference to timer
 @onready var timer = $Timer
 
@@ -43,7 +40,6 @@ func _on_body_entered(body):
 		add_child(ui);
 		
 		# play music
-		fmod_event.play();
 		
 		collision_layer = 0
 		

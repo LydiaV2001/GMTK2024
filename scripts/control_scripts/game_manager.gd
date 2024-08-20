@@ -35,10 +35,6 @@ func _ready() -> void:
 	#fmod_object.set_event_guid("{5bc23b83-33ed-4890-9e9a-46decadf7053}");
 	#fmod_object.set_event_name("event:/MUSIC/MUSIC_Stage");
 	
-	event = FmodServer.create_event_instance("event:/MUSIC/MUSIC_Stage");
-	#event.set_2d_attributes(self.global_transform);
-	event.set_parameter_by_name("Stage-Music", track_index)
-	
 	#fmod_object["event_parameter/Stage-Music/value"] = "Track B"; #.set_parameter_by_name("Stage-Music", 2);
 	
 
@@ -50,12 +46,11 @@ func _physics_process(delta):
 func play_music():
 	#fmod_object["event_parameter/Stage-Music/value"] = 3;
 	#fmod_object.play();
-	event.set_parameter_by_name("Stage-Music", track_index)
-	event.start();
+	pass
 
 func stop_music():
 	#fmod_object.stop();
-	event.stop(0);
+	pass
 
 # load select screen
 func select_screen():

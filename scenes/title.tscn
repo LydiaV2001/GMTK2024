@@ -26,12 +26,12 @@ position = Vector2(235, 80)
 texture = ExtResource("3_efgg3")
 
 [node name="Button" type="Button" parent="CanvasGroup"]
-offset_left = 86.0
-offset_top = 114.0
-offset_right = 355.0
-offset_bottom = 193.0
+offset_left = 24.0
+offset_top = 120.0
+offset_right = 438.0
+offset_bottom = 199.0
 theme_override_font_sizes/font_size = 48
-text = "Start Game"
+text = "Download Below!"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasGroup"]
 script = ExtResource("2_yboh1")
@@ -50,9 +50,5 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 128
 text = "Scaly Scaling
 "
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/SFX/SOUND_Menu-Confirm"
-event_guid = "{c59550be-2411-471a-8c78-5d1048affa03}"
 
 [connection signal="on_fade_out" from="FadeController" to="." method="_on_fade_controller_on_fade_out"]

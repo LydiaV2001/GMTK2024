@@ -44,38 +44,15 @@ texture_repeat = 2
 motion_mirroring = Vector2(64, 64)
 
 [node name="Label" type="Label" parent="CanvasGroup"]
-offset_top = -128.0
-offset_right = 459.0
-offset_bottom = -40.0
+offset_left = -56.0
+offset_top = -8.0
+offset_right = 476.0
+offset_bottom = 143.0
 scale = Vector2(1.025, 1.025)
-text = "=OPTION SELECT="
+text = "=MUSIC AVAILABLE=
+=IN DOWNLOAD="
 label_settings = SubResource("LabelSettings_7nq6i")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasGroup"]
-offset_left = 200.0
-offset_top = -8.0
-offset_right = 251.0
-offset_bottom = 16.0
-text = "Music:"
-
-[node name="ItemList" type="ItemList" parent="CanvasGroup"]
-offset_left = 88.0
-offset_top = 32.0
-offset_right = 360.0
-offset_bottom = 160.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-item_count = 4
-item_0/text = "All Tracks (Randomized)"
-item_1/text = "Track A"
-item_2/text = "Track B"
-item_3/text = "Track C"
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/SFX/SOUND_Menu-Move"
-event_guid = "{b2f5917f-0f74-4871-a8bb-170cc36c7897}"
-
 [connection signal="on_fade_out" from="FadeController" to="." method="_on_fade_controller_on_fade_out"]
 [connection signal="pressed" from="CanvasGroup/Button" to="." method="_on_button_pressed"]
-[connection signal="item_selected" from="CanvasGroup/ItemList" to="." method="_on_item_list_item_selected"]

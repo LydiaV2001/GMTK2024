@@ -7,8 +7,6 @@ var fader
 
 var button_pressed: bool = false;
 
-@onready var fmod_event = $FmodEventEmitter2D
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	fader = $FadeController #$ColorRect;
@@ -25,7 +23,6 @@ func _process(delta: float) -> void:
 func _button_pressed() -> void:
 	if (!button_pressed):
 		button_pressed = true;
-		fmod_event.play();
 		fader.start_fade_out();
 
 func _on_fade_controller_on_fade_out() -> void:

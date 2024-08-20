@@ -4,9 +4,6 @@ extends Node2D
 
 var buttonPressed: bool = false;
 
-# for the menu select sound
-@onready var menu_select_sound = $FmodEventEmitter2D;
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -20,11 +17,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_item_list_item_selected(index: int) -> void:
-	menu_select_sound.play();
-	
+func _on_item_list_item_selected(index: int) -> void:	
 	GameManager.track_index = index;
-	GameManager.play_music();
 	pass # Replace with function body.
 	
 
@@ -32,7 +26,6 @@ func _on_button_pressed() -> void:
 	if (!buttonPressed):
 		buttonPressed = true;
 		fadeController.start_fade_out();
-		GameManager.stop_music();
 	pass # Replace with function body.
 
 

@@ -35,8 +35,8 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-FmodManager="*res://addons/fmod/FmodManager.gd"
-FMod="*res://scenes/controllers/f_mod.tscn"
+FmodManager="res://addons/fmod/FmodManager.gd"
+FMod="res://scenes/controllers/f_mod.tscn"
 GameManager="*res://scripts/control_scripts/game_manager.gd"
 
 [display]
@@ -49,10 +49,6 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="GMTK2024"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [gui]
 

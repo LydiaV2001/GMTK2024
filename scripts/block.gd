@@ -12,7 +12,6 @@ var y_position
 @onready var y_tween
 @onready var r_tween
 
-@onready var fmod_event = $FmodEventEmitter2D
 @onready var warning_shader = preload("res://Shaders/warning.gdshader");
 
 var can_move
@@ -54,15 +53,10 @@ func _physics_process(_delta):
 				can_move = false
 				on_landed.emit()
 				
-				# play FMOD sound
-				fmod_event.play();
 		if global_position.y > 600:
 			on_just_placed.emit()
 			can_move = false
 			on_landed.emit()
-				
-			# play FMOD sound
-			fmod_event.play();
 	else:
 		velocity.y += gravity*_delta
 		move_and_slide()
