@@ -1,16 +1,16 @@
 [gd_scene load_steps=10 format=4 uid="uid://d3y0qlqomxnrm"]
 
-[ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_l0vum"]
-[ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_vlqrh"]
-[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_2ibff"]
-[ext_resource type="PackedScene" uid="uid://bvw1fxiok878f" path="res://scenes/characters/evil_bush.tscn" id="4_qvlgj"]
-[ext_resource type="PackedScene" uid="uid://bhwu87glevutv" path="res://scenes/characters/goal.tscn" id="5_0xx52"]
-[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="6_1h4ww"]
+[ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_vqe6j"]
+[ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_hs6s6"]
+[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_6fxkb"]
+[ext_resource type="PackedScene" uid="uid://bvw1fxiok878f" path="res://scenes/characters/evil_bush.tscn" id="4_cxe51"]
+[ext_resource type="PackedScene" uid="uid://bhwu87glevutv" path="res://scenes/characters/goal.tscn" id="5_slgo2"]
+[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="6_m1t38"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7nr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0m1ga"]
-texture = ExtResource("6_1h4ww")
+texture = ExtResource("6_m1t38")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -100,7 +100,7 @@ sources/0 = SubResource("TileSetAtlasSource_0m1ga")
 
 [node name="CamilosSuperCoolLevelWayBetterThanJonahs" type="Node2D"]
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_l0vum")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_vqe6j")]
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -117,39 +117,39 @@ rotation = 4.71239
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall"]
 shape = SubResource("WorldBoundaryShape2D_j7nr7")
 
-[node name="Player" parent="." instance=ExtResource("2_vlqrh")]
+[node name="Player" parent="." instance=ExtResource("2_hs6s6")]
 position = Vector2(48, 400)
 
-[node name="BlockSpawner" parent="." instance=ExtResource("3_2ibff")]
+[node name="BlockSpawner" parent="." instance=ExtResource("3_6fxkb")]
 block_list = Array[int]([4, 5, 6])
 
-[node name="EvilBush" parent="." instance=ExtResource("4_qvlgj")]
+[node name="EvilBush" parent="." instance=ExtResource("4_cxe51")]
 position = Vector2(576, 192)
 
-[node name="EvilBush6" parent="." instance=ExtResource("4_qvlgj")]
+[node name="EvilBush6" parent="." instance=ExtResource("4_cxe51")]
 position = Vector2(576, 160)
 
-[node name="EvilBush7" parent="." instance=ExtResource("4_qvlgj")]
+[node name="EvilBush7" parent="." instance=ExtResource("4_cxe51")]
 position = Vector2(576, 128)
 
-[node name="EvilBush8" parent="." instance=ExtResource("4_qvlgj")]
+[node name="EvilBush8" parent="." instance=ExtResource("4_cxe51")]
 position = Vector2(576, 96)
 
-[node name="EvilBush3" parent="." instance=ExtResource("4_qvlgj")]
+[node name="EvilBush3" parent="." instance=ExtResource("4_cxe51")]
 position = Vector2(576, 224)
 
-[node name="EvilBush4" parent="." instance=ExtResource("4_qvlgj")]
+[node name="EvilBush4" parent="." instance=ExtResource("4_cxe51")]
 position = Vector2(576, 256)
 
-[node name="EvilBush5" parent="." instance=ExtResource("4_qvlgj")]
+[node name="EvilBush5" parent="." instance=ExtResource("4_cxe51")]
 position = Vector2(576, 288)
 
-[node name="EvilBush2" parent="." instance=ExtResource("4_qvlgj")]
+[node name="EvilBush2" parent="." instance=ExtResource("4_cxe51")]
 visible = false
 position = Vector2(576, 480)
 scale = Vector2(20, 1)
 
-[node name="Goal" parent="." instance=ExtResource("5_0xx52")]
+[node name="Goal" parent="." instance=ExtResource("5_slgo2")]
 position = Vector2(800, 32)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

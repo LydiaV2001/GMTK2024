@@ -1,16 +1,16 @@
 [gd_scene load_steps=10 format=4 uid="uid://doacm7bd06c7u"]
 
-[ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_hqvae"]
-[ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_knpk5"]
-[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_7fpj5"]
-[ext_resource type="PackedScene" uid="uid://bvw1fxiok878f" path="res://scenes/characters/evil_bush.tscn" id="4_hnuxg"]
-[ext_resource type="PackedScene" uid="uid://bhwu87glevutv" path="res://scenes/characters/goal.tscn" id="5_vpsf6"]
-[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="6_6tjn5"]
+[ext_resource type="PackedScene" uid="uid://cbupr6pgt7p5q" path="res://scenes/controllers/parallax_background.tscn" id="1_e6cvo"]
+[ext_resource type="PackedScene" uid="uid://c35rt6rx2e0gk" path="res://scenes/characters/player.tscn" id="2_1ysdn"]
+[ext_resource type="PackedScene" uid="uid://dwbp8smtte4wc" path="res://scenes/Blocks/block_spawner.tscn" id="3_fwn7s"]
+[ext_resource type="PackedScene" uid="uid://bvw1fxiok878f" path="res://scenes/characters/evil_bush.tscn" id="4_cxf6h"]
+[ext_resource type="PackedScene" uid="uid://bhwu87glevutv" path="res://scenes/characters/goal.tscn" id="5_ragbs"]
+[ext_resource type="Texture2D" uid="uid://c57oqsw87xuoh" path="res://assets/icon.svg" id="6_8kh1u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j7nr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0m1ga"]
-texture = ExtResource("6_6tjn5")
+texture = ExtResource("6_8kh1u")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -100,7 +100,7 @@ sources/0 = SubResource("TileSetAtlasSource_0m1ga")
 
 [node name="CamilosSuperCoolLevelWayBetterThanJonahs" type="Node2D"]
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_hqvae")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_e6cvo")]
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -117,229 +117,229 @@ rotation = 4.71239
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall"]
 shape = SubResource("WorldBoundaryShape2D_j7nr7")
 
-[node name="Player" parent="." instance=ExtResource("2_knpk5")]
+[node name="Player" parent="." instance=ExtResource("2_1ysdn")]
 position = Vector2(48, 400)
 
-[node name="BlockSpawner" parent="." instance=ExtResource("3_7fpj5")]
+[node name="BlockSpawner" parent="." instance=ExtResource("3_fwn7s")]
 block_list = Array[int]([0, 1, 2, 3, 4, 5, 6])
 
-[node name="EvilBush" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(544, 256)
 
-[node name="EvilBush13" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush13" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(544, 224)
 
-[node name="EvilBush14" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush14" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(544, 192)
 
-[node name="EvilBush7" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush7" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(544, 160)
 
-[node name="EvilBush8" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush8" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, 128)
 
-[node name="EvilBush9" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush9" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(480, 96)
 
-[node name="EvilBush41" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush41" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(448, 128)
 
-[node name="EvilBush42" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush42" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(416, 160)
 
-[node name="EvilBush43" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush43" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(320, 192)
 
-[node name="EvilBush44" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush44" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(352, 192)
 
-[node name="EvilBush45" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush45" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(384, 192)
 
-[node name="EvilBush10" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush10" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(704, 96)
 
-[node name="EvilBush15" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush15" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(736, 96)
 
-[node name="EvilBush16" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush16" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(768, 96)
 
-[node name="EvilBush17" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush17" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(800, 96)
 
-[node name="EvilBush18" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush18" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(832, 96)
 
-[node name="EvilBush19" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush19" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(864, 96)
 
-[node name="EvilBush11" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush11" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, 64)
 
-[node name="EvilBush12" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush12" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(640, 32)
 
-[node name="EvilBush25" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush25" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(640, -416)
 
-[node name="EvilBush26" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush26" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, -416)
 
-[node name="EvilBush27" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush27" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, -448)
 
-[node name="EvilBush28" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush28" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(640, -448)
 
-[node name="EvilBush55" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush55" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(640, -352)
 
-[node name="EvilBush56" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush56" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, -352)
 
-[node name="EvilBush57" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush57" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, -384)
 
-[node name="EvilBush58" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush58" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(640, -384)
 
-[node name="EvilBush33" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush33" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(480, -416)
 
-[node name="EvilBush34" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush34" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -416)
 
-[node name="EvilBush35" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush35" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -448)
 
-[node name="EvilBush36" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush36" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(480, -448)
 
-[node name="EvilBush63" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush63" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(480, -352)
 
-[node name="EvilBush64" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush64" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -352)
 
-[node name="EvilBush65" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush65" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -384)
 
-[node name="EvilBush66" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush66" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(480, -384)
 
-[node name="EvilBush67" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush67" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -288)
 
-[node name="EvilBush68" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush68" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(544, -288)
 
-[node name="EvilBush69" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush69" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(544, -320)
 
-[node name="EvilBush70" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush70" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -320)
 
-[node name="EvilBush73" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush73" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(544, -256)
 
-[node name="EvilBush74" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush74" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -256)
 
-[node name="EvilBush29" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush29" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(480, -480)
 
-[node name="EvilBush30" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush30" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -480)
 
-[node name="EvilBush31" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush31" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -512)
 
-[node name="EvilBush32" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush32" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(480, -512)
 
-[node name="EvilBush59" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush59" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -544)
 
-[node name="EvilBush60" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush60" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(544, -544)
 
-[node name="EvilBush61" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush61" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(544, -576)
 
-[node name="EvilBush62" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush62" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, -576)
 
-[node name="EvilBush37" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush37" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, -544)
 
-[node name="EvilBush38" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush38" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(704, -544)
 
-[node name="EvilBush39" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush39" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(704, -576)
 
-[node name="EvilBush40" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush40" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, -576)
 
-[node name="EvilBush51" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush51" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, -480)
 
-[node name="EvilBush52" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush52" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(704, -480)
 
-[node name="EvilBush53" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush53" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(704, -512)
 
-[node name="EvilBush54" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush54" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, -512)
 
-[node name="EvilBush2" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush2" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(512, 288)
 
-[node name="EvilBush3" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush3" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(480, 320)
 
-[node name="EvilBush4" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush4" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(640, 320)
 
-[node name="EvilBush5" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush5" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(672, 288)
 
-[node name="EvilBush6" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush6" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(704, 256)
 
-[node name="EvilBush20" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush20" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(160, 192)
 
-[node name="EvilBush21" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush21" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(192, 192)
 
-[node name="EvilBush22" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush22" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(224, 192)
 
-[node name="EvilBush23" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush23" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(256, 192)
 
-[node name="EvilBush24" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush24" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(288, 192)
 
-[node name="EvilBush46" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush46" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(128, 192)
 
-[node name="EvilBush47" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush47" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(96, 192)
 
-[node name="EvilBush48" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush48" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(64, 192)
 
-[node name="EvilBush49" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush49" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(32, 192)
 
-[node name="EvilBush50" parent="." instance=ExtResource("4_hnuxg")]
+[node name="EvilBush50" parent="." instance=ExtResource("4_cxf6h")]
 position = Vector2(0, 192)
 
-[node name="Goal" parent="." instance=ExtResource("5_vpsf6")]
+[node name="Goal" parent="." instance=ExtResource("5_ragbs")]
 position = Vector2(800, -736)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
