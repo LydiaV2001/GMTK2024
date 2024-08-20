@@ -56,6 +56,13 @@ func _physics_process(_delta):
 				
 				# play FMOD sound
 				fmod_event.play();
+		if global_position.y > 600:
+			on_just_placed.emit()
+			can_move = false
+			on_landed.emit()
+				
+			# play FMOD sound
+			fmod_event.play();
 	else:
 		velocity.y += gravity*_delta
 		move_and_slide()
