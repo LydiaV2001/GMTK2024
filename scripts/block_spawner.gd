@@ -39,7 +39,6 @@ func _process(delta):
 	pass
 
 func _input(event):
-	#CHANGE THIS TO ALSO WORK WITH CONTROLLER!!!!!!!!!
 	if event.is_action_pressed("clear"):
 		spawned_blocks.clear()
 		spawn_block()

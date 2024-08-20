@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbqr8gyefn4w1"]
+
+[ext_resource type="Texture2D" uid="uid://bu6ccgu34ng4j" path="res://assets/EvilBusht.png" id="2_ul4c3"]
+
+[sub_resource type="GDScript" id="GDScript_a2wd7"]
+script/source = "extends Area2D
+class_name BlockDeleter
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_body_entered(body):
+	print(\"is it a block?\")
+	if body is Block:
+		print(\"Its a block\")
+		body.on_just_placed.emit();
+		body.on_landed.emit();
+		body.queue_free();
+		#get_tree().reload_current_scene()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eoct"]
+size = Vector2(32, 32)
+
+[node name="BlockDeleter" type="Area2D"]
+z_index = 1
+collision_layer = 0
+collision_mask = 3
+script = SubResource("GDScript_a2wd7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ul4c3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5eoct")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
